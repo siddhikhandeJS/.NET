@@ -1,0 +1,32 @@
+@using BookProject.Entities;
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Action</th>
+                <th>Action</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        @{ 
+            foreach(Book b in Model){
+                <tr>
+                    <td>@b.BId</td>
+                    <td>@b.Name</td>
+                    <td>
+                        <button class="btn btn-danger"><a href="/Books/Delete/@b.BId">Delete</a></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-info"><a href="/Books/Details/@b.BId">Details</a></button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary"><a href="/Books/EditForm/@b.BId">Update</a></button>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+    <button class="btn btn-success"><a href="/Books/AddForm">Add</a></button>
+</body>

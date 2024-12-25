@@ -1,0 +1,20 @@
+<body>
+    <form action="/Books/Update" method="post">
+        <label for="id">Id</label>
+        <input type="text" name="bid" value="@Model.Id" readonly required>
+
+        <label for="name">Name</label>
+        <input type="text" name="name" value="@Model.Name" required>
+
+        <label for="author">Author</label>
+        <input type="text" name="author" value="@Model.Author" required>
+
+        <label for="price">Price</label>
+        <input type="text" name="price" value="@Model.Price" required>
+
+        <label for="publication">Publication</label>
+        <input type="text" name="publication" value="@Model.Publication" required>
+
+        <button type="submit">Update</button>
+    </form>
+</body>
