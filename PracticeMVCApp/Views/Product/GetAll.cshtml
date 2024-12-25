@@ -1,0 +1,36 @@
+@using practicemvc.Entities;
+<body>
+    <h1>Product List</h1>
+    <hr/>
+    <form action="">
+        <table>
+            <thead>
+                <tr>
+                    <th>PId</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                    <th>Action</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            @{
+                foreach(Product p in Model){
+                    <tr>
+                        <td>@p.PId</td>
+                        <td>@p.Name</td>
+                        <td>
+                            <button class="btn btn-danger" ><a href="/Product/Delete/@p.PId">Delete</a></button>
+                        </td>
+                        <td>
+                            <button class="btn btn-info" ><a href="/Product/Details/@p.PId">Details</a></button>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary" ><a href="/Product/EditForm/@p.PId">Update</a></button>
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+        <button class="btn btn-success"><a href="/Product/AddForm">Add</a></button>
+    </form>
+</body>
